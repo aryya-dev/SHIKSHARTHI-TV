@@ -6131,6 +6131,253 @@
 }
 </style>
 
+
+<style id="senior-tv-premium-final-patch">
+/* ================================================================
+   SENIOR TV PREMIUM FINAL PATCH
+   Scope:
+   - Slide 2 leadership: Priyanka Ghosh stays on one line
+   - Slide 6 programme journey: premium TV-safe redesign
+   - Slide 7 Why Choose Us: premium TV-safe redesign
+   - Slide 5 About/At-a-Glance: more efficient TV composition
+   - All achiever slides: reserve logo zone so Academic Excellence
+     never runs behind the logo
+   Everything else remains untouched.
+   ================================================================ */
+
+/* ---------- Slide 2: leadership ---------- */
+.tv-fixed-2 .pm-leader-name{
+    white-space:nowrap !important;
+    font-size:clamp(42px,4.15vw,68px) !important;
+    line-height:1 !important;
+    letter-spacing:.2px !important;
+}
+.tv-fixed-2 .pm-leader-copy{min-width:0 !important}
+.tv-fixed-2 .pm-leader-role{margin-top:12px !important}
+
+/* ---------- Slide 5: About / At a Glance ---------- */
+@media screen and (max-height:950px){
+    .tv-fixed-5 .intro-wrap{
+        top:94px !important;
+        bottom:84px !important;
+        left:48px !important;
+        right:34% !important;
+        justify-content:center !important;
+    }
+    .tv-fixed-5 .intro-title{
+        font-size:42px !important;
+        line-height:1 !important;
+        margin:0 !important;
+    }
+    .tv-fixed-5 .intro-subtitle{
+        font-size:15px !important;
+        line-height:1.25 !important;
+        margin-top:6px !important;
+    }
+    .tv-fixed-5 .intro-gold-line{
+        width:78px !important;height:4px !important;margin:8px 0 9px !important;
+    }
+    .tv-fixed-5 .intro-grid-4{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:9px !important;
+        margin-top:5px !important;
+    }
+    .tv-fixed-5 .stat-card{
+        min-height:112px !important;
+        padding:13px 12px !important;
+        border-radius:17px !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:center !important;
+    }
+    .tv-fixed-5 .stat-number{font-size:31px !important}
+    .tv-fixed-5 .stat-label{font-size:13px !important;margin-top:4px !important}
+    .tv-fixed-5 .stat-desc{font-size:9px !important;line-height:1.28 !important;margin-top:4px !important}
+    .tv-fixed-5 .compact-editorial-photo{
+        top:135px !important;
+        right:48px !important;
+        width:27% !important;
+        height:330px !important;
+        border-radius:26px !important;
+    }
+}
+
+/* ---------- Slide 6: premium academic journey ---------- */
+@media screen and (max-height:950px){
+    .tv-fixed-6 .pm-program-shell{
+        inset:92px 50px 84px !important;
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        align-content:center !important;
+        overflow:hidden !important;
+    }
+    .tv-fixed-6 .pm-program-copy{
+        width:100% !important;
+        max-width:none !important;
+        display:grid !important;
+        grid-template-columns:1.1fr .9fr !important;
+        column-gap:32px !important;
+        align-items:end !important;
+    }
+    .tv-fixed-6 .pm-program-copy .pm-kicker{
+        grid-column:1 / -1 !important;
+        font-size:13px !important;
+        letter-spacing:4px !important;
+        margin:0 0 5px !important;
+    }
+    .tv-fixed-6 .pm-program-copy h1{
+        font-size:clamp(43px,4.3vw,66px) !important;
+        line-height:.95 !important;
+        letter-spacing:.3px !important;
+        margin:0 !important;
+    }
+    .tv-fixed-6 .pm-program-lead{
+        font-size:18px !important;
+        line-height:1.25 !important;
+        margin:0 0 4px !important;
+        text-align:right !important;
+    }
+    .tv-fixed-6 .pm-program-grid{
+        grid-column:1 / -1 !important;
+        display:grid !important;
+        grid-template-columns:repeat(4,1fr) !important;
+        gap:12px !important;
+        margin-top:20px !important;
+        width:100% !important;
+    }
+    .tv-fixed-6 .pm-program-card{
+        min-height:188px !important;
+        padding:17px 16px 14px !important;
+        border-radius:22px !important;
+        background:rgba(69,23,8,.78) !important;
+        border:1px solid rgba(255,220,90,.34) !important;
+        box-shadow:0 16px 34px rgba(54,16,3,.22) !important;
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+    }
+    .tv-fixed-6 .pm-program-card.pm-featured{
+        background:linear-gradient(145deg,#ffe46a,#ffc938) !important;
+        border-color:#fff0a3 !important;
+    }
+    .tv-fixed-6 .pm-program-card b{font-size:31px !important;line-height:1 !important}
+    .tv-fixed-6 .pm-program-card small{font-size:10px !important;letter-spacing:1.3px !important;margin-top:5px !important}
+    .tv-fixed-6 .pm-program-card h3{font-size:20px !important;line-height:1.05 !important;margin:16px 0 5px !important}
+    .tv-fixed-6 .pm-program-card p{font-size:11px !important;line-height:1.3 !important;margin:0 !important}
+    .tv-fixed-6 .pm-program-visual{display:none !important}
+}
+
+/* ---------- Slide 7: premium Why Choose Us ---------- */
+@media screen and (max-height:950px){
+    .tv-fixed-7 .why-editorial-wrap{
+        top:94px !important;
+        bottom:84px !important;
+        left:50px !important;
+        right:50px !important;
+        display:grid !important;
+        grid-template-columns:minmax(0,1.38fr) minmax(300px,.62fr) !important;
+        gap:34px !important;
+        align-items:center !important;
+        overflow:hidden !important;
+    }
+    .tv-fixed-7 .why-editorial-copy{min-width:0 !important}
+    .tv-fixed-7 .why-editorial-copy .intro-eyebrow{
+        font-size:13px !important;letter-spacing:3px !important;margin-bottom:5px !important;
+    }
+    .tv-fixed-7 .why-editorial-copy .intro-title{
+        font-size:44px !important;line-height:.98 !important;margin:0 !important;
+    }
+    .tv-fixed-7 .why-editorial-lead{
+        font-size:15px !important;line-height:1.3 !important;margin-top:5px !important;
+    }
+    .tv-fixed-7 .why-editorial-line{
+        width:82px !important;height:4px !important;margin:8px 0 6px !important;
+    }
+    .tv-fixed-7 .why-editorial-journey{
+        display:grid !important;
+        grid-template-columns:1fr 1fr !important;
+        column-gap:20px !important;
+    }
+    .tv-fixed-7 .why-editorial-journey>div{
+        min-height:55px !important;
+        padding:8px 6px 8px 42px !important;
+    }
+    .tv-fixed-7 .why-editorial-journey span{
+        top:10px !important;font-size:10px !important;
+    }
+    .tv-fixed-7 .why-editorial-journey strong{
+        font-size:14px !important;margin-bottom:1px !important;
+    }
+    .tv-fixed-7 .why-editorial-journey small{
+        font-size:9px !important;line-height:1.25 !important;
+    }
+    .tv-fixed-7 .why-editorial-stats{
+        gap:6px !important;margin-top:8px !important;
+    }
+    .tv-fixed-7 .why-editorial-stats span{
+        padding:5px 9px !important;font-size:9px !important;
+    }
+    .tv-fixed-7 .why-editorial-stats b{font-size:10px !important}
+    .tv-fixed-7 .why-editorial-visual{
+        height:360px !important;
+    }
+    .tv-fixed-7 .why-photo-frame{
+        height:330px !important;
+        border-radius:32px 32px 32px 76px !important;
+    }
+    .tv-fixed-7 .why-photo-overlay{
+        left:20px !important;right:18px !important;bottom:18px !important;
+    }
+    .tv-fixed-7 .why-photo-overlay b{font-size:19px !important}
+    .tv-fixed-7 .why-photo-overlay span{font-size:10px !important}
+    .tv-fixed-7 .why-orbit{font-size:8px !important;padding:6px 9px !important}
+    .tv-fixed-7 .why-orbit-a{top:18px !important;right:-6px !important}
+    .tv-fixed-7 .why-orbit-b{left:-18px !important;top:100px !important}
+    .tv-fixed-7 .why-orbit-c{right:-8px !important;bottom:14px !important}
+}
+
+/* ---------- All achiever result slides: permanent logo-safe header ---------- */
+.excel-result .excel-shell{
+    padding-top:0 !important;
+}
+.excel-result .excel-copy{
+    min-width:0 !important;
+}
+.excel-result .excel-kicker{
+    max-width:calc(100% - 350px) !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+}
+@media screen and (max-height:950px){
+    .excel-result .excel-shell{
+        top:54px !important;
+        bottom:88px !important;
+    }
+    .excel-result .excel-kicker{
+        max-width:calc(100% - 330px) !important;
+        font-size:17px !important;
+        letter-spacing:3px !important;
+    }
+    .excel-result .excel-copy h1{
+        font-size:clamp(42px,4vw,64px) !important;
+        line-height:.98 !important;
+        margin-top:8px !important;
+    }
+    .excel-result .excel-school{font-size:20px !important}
+}
+@media screen and (max-height:780px){
+    .tv-fixed-2 .pm-leader-name{font-size:42px !important}
+    .tv-fixed-5 .compact-editorial-photo{height:280px !important;top:120px !important}
+    .tv-fixed-6 .pm-program-shell{inset:82px 44px 80px !important}
+    .tv-fixed-6 .pm-program-card{min-height:165px !important}
+    .tv-fixed-7 .why-editorial-wrap{top:82px !important;bottom:80px !important}
+    .tv-fixed-7 .why-editorial-visual{height:310px !important}
+    .tv-fixed-7 .why-photo-frame{height:285px !important}
+    .excel-result .excel-kicker{max-width:calc(100% - 310px) !important;font-size:15px !important}
+}
+</style>
+
 </head>
 
 <body>
