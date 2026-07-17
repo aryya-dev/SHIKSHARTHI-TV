@@ -7213,6 +7213,44 @@
 }
 </style>
 
+
+<style id="footer-unification-patch">
+/* Unified footer for both intro and achiever slides */
+.footer-banner{
+  height:78px !important;
+  padding:0 42px !important;
+  border-top:3px solid #eab308 !important;
+}
+.footer-cell{
+  vertical-align:middle !important;
+  font-size:15px !important;
+}
+.footer-address{
+  line-height:1.35 !important;
+}
+.footer-contact{
+  text-align:right !important;
+  font-size:38px !important;
+  font-weight:800 !important;
+  color:#fde047 !important;
+  white-space:nowrap !important;
+  line-height:1.05 !important;
+}
+.footer-contact span{
+  font-size:18px !important;
+  color:#cbd5e1 !important;
+  margin-right:10px !important;
+}
+
+/* Catch common alternate footer names used in achiever section */
+[class*="footer"] .footer-contact{
+  font-size:38px !important;
+}
+[class*="footer"] .footer-address{
+  line-height:1.35 !important;
+}
+</style>
+
 </head>
 
 <body>
