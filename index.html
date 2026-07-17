@@ -5,6 +5,12 @@
 <head>
     <meta charset="utf-8" />
     <title>Shiksharthi Educational Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -206,13 +212,14 @@
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .student-school {
-            font-size: 26px;
+        .result-school {
+            font-family: "Poppins", sans-serif;
+            font-size: 54px;
             color: #fef08a;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            line-height: 1.05;
         }
 
         /* Score Box / Subject Grid */
@@ -425,19 +432,21 @@
             color: #fff;
         }
 
-        .footer-contact {
-            text-align: right;
-            font-size: 22px;
-            font-weight: 700;
-            color: #fde047;
-        }
+        .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-        .footer-contact span {
-            color: #94a3b8;
-            font-size: 14px;
-            font-weight: 400;
-            margin-right: 10px;
-        }
+        .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
         /* Auto Play Progress Bar Indicator */
         .progress-bar-container {
@@ -527,10 +536,6 @@
                 font-size: 46px;
             }
 
-            .student-school {
-                font-size: 22px;
-                margin-bottom: 20px;
-            }
 
             .subject-card {
                 padding: 15px 20px;
@@ -544,9 +549,20 @@
                 font-size: 28px;
                 margin-bottom: 18px;
             }
+
+            .student-school {
+                font-size: 44px;
+                margin-bottom: 20px;
+            }
         }
 
         @media screen and (max-height: 780px) {
+
+            .student-school {
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+
             .header-brand {
                 top: 18px;
             }
@@ -589,11 +605,6 @@
 
             .student-name {
                 font-size: 42px;
-            }
-
-            .student-school {
-                font-size: 20px;
-                margin-bottom: 15px;
             }
 
             .air-ribbon {
@@ -3111,9 +3122,14 @@
             font-size: 12px !important
         }
 
-        .footer-contact {
-            font-size: 18px !important
-        }
+        .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
         .tv-controls {
             opacity: .12;
@@ -3210,14 +3226,6 @@
             letter-spacing: -2.5px !important;
             margin-bottom: 14px !important;
             max-width: 950px !important
-        }
-
-        .student-school {
-            font-size: clamp(20px, 1.6vw, 30px) !important;
-            color: #ffe99a !important;
-            margin-bottom: 26px !important;
-            letter-spacing: .5px !important;
-            text-transform: none !important
         }
 
         .subject-card-grid {
@@ -3869,9 +3877,14 @@
             font-size: 12px !important
         }
 
-        .pm-slide .footer-contact {
-            font-size: 19px !important
-        }
+        .pm-slide .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
         @media(max-height:900px) {
             .pm-brand {
@@ -4376,11 +4389,6 @@
             line-height: .95 !important
         }
 
-        .student-school {
-            font-size: clamp(21px, 1.5vw, 30px) !important;
-            margin-bottom: 10px !important
-        }
-
         .avatar-frame {
             width: min(430px, 30vw) !important;
             height: min(430px, 30vw) !important
@@ -4520,13 +4528,6 @@
             text-shadow: 0 4px 12px rgba(0, 0, 0, .25)
         }
 
-        .result-school {
-            font-size: 24px;
-            color: #fef3c7;
-            font-weight: 700;
-            margin-top: 8px;
-            margin-bottom: 24px
-        }
 
         .result-main-score {
             display: inline-flex;
@@ -4604,9 +4605,6 @@
                 font-size: 78px
             }
 
-            .result-name {
-                font-size: 48px
-            }
 
             .result-main-score strong {
                 font-size: 46px
@@ -4625,14 +4623,7 @@
                 font-size: 64px
             }
 
-            .result-name {
-                font-size: 40px
-            }
 
-            .result-school {
-                font-size: 19px;
-                margin-bottom: 14px
-            }
 
             .result-main-score {
                 padding: 10px 18px
@@ -4720,22 +4711,8 @@
             margin-bottom: 12px !important
         }
 
-        .result-name {
-            font-size: clamp(72px, 6.2vw, 122px) !important;
-            line-height: .88 !important;
-            letter-spacing: -4px !important;
-            text-wrap: balance !important;
-            text-shadow: 0 8px 25px rgba(0, 0, 0, .35) !important;
-            margin-bottom: 12px !important
-        }
 
-        .result-school {
-            font-size: clamp(29px, 2.35vw, 46px) !important;
-            line-height: 1.05 !important;
-            margin-top: 4px !important;
-            margin-bottom: 22px !important;
-            color: #fff7d6 !important
-        }
+
 
         .result-main-score {
             padding: 16px 28px !important;
@@ -4809,18 +4786,14 @@
                 min-height: 250px !important
             }
 
-            .result-name {
-                font-size: clamp(64px, 5.6vw, 105px) !important
-            }
+
 
             .result-subject {
                 min-height: 68px !important;
                 padding: 12px 16px !important
             }
 
-            .result-school {
-                margin-bottom: 14px !important
-            }
+
         }
 
         @media(max-height:760px) {
@@ -4848,13 +4821,8 @@
                 margin-top: 14px !important
             }
 
-            .result-name {
-                font-size: clamp(54px, 5vw, 88px) !important
-            }
 
-            .result-school {
-                font-size: clamp(24px, 2vw, 36px) !important
-            }
+
 
             .result-main-score strong {
                 font-size: clamp(52px, 4.5vw, 78px) !important
@@ -5196,17 +5164,21 @@
             line-height: 1.5 !important;
         }
 
-        .footer-contact {
-            font-size: 30px !important;
-            font-weight: 900 !important;
-            letter-spacing: .4px !important;
-        }
+        .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-        .footer-contact span {
-            font-size: 18px !important;
-            font-weight: 700 !important;
-            margin-right: 14px !important;
-        }
+        .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
         .slide-content {
             bottom: 145px !important;
@@ -5232,10 +5204,6 @@
             font-size: 50px !important;
         }
 
-        .student-school {
-            font-size: 22px !important;
-            margin-bottom: 22px !important;
-        }
 
         .air-ribbon {
             font-size: 31px !important;
@@ -5287,9 +5255,14 @@
                 height: 100px !important;
             }
 
-            .footer-contact {
-                font-size: 27px !important;
-            }
+            .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
             .slide-content {
                 bottom: 125px !important;
@@ -5329,13 +5302,21 @@
                 height: 92px !important;
             }
 
-            .footer-contact {
-                font-size: 24px !important;
-            }
+            .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-            .footer-contact span {
-                font-size: 15px !important;
-            }
+            .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
             .slide-content {
                 bottom: 112px !important;
@@ -5435,17 +5416,21 @@
             font-weight: 900 !important
         }
 
-        .slide .footer-contact {
-            font-size: 30px !important;
-            font-weight: 950 !important;
-            white-space: nowrap !important;
-            color: #fde047 !important
-        }
+        .slide .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-        .slide .footer-contact span {
-            font-size: 18px !important;
-            font-weight: 700 !important
-        }
+        .slide .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
         /* Generic slide systems */
         .slide-content {
@@ -5536,13 +5521,21 @@
                 font-size: 17px !important
             }
 
-            .slide .footer-contact {
-                font-size: 24px !important
-            }
+            .slide .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-            .slide .footer-contact span {
-                font-size: 15px !important
-            }
+            .slide .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
             .result-slide .result-wrap,
             .excel-result .result-wrap {
@@ -5598,16 +5591,21 @@
             z-index: 9990 !important
         }
 
-        .slide>.footer-banner .footer-contact {
-            font-size: clamp(23px, 1.65vw, 32px) !important;
-            font-weight: 950 !important;
-            white-space: nowrap !important
-        }
+        .slide>.footer-banner .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
-        .slide>.footer-banner .footer-contact span {
-            font-size: clamp(14px, .95vw, 18px) !important;
-            font-weight: 700 !important
-        }
+        .slide>.footer-banner .footer-contact span{
+    color:#94a3b8 !important;
+    font-size:16px !important;
+    font-weight:600 !important;
+    margin-right:10px !important;
+}
 
         .slide>.footer-banner .footer-address {
             font-size: clamp(13px, .85vw, 17px) !important
@@ -5661,24 +5659,8 @@
             padding: clamp(18px, 1.7vw, 32px) !important
         }
 
-        .slide.result-slide .result-name,
-        .slide.excel-result .result-name {
-            font-size: clamp(48px, 4.5vw, 88px) !important;
-            line-height: .92 !important;
-            margin-bottom: 7px !important;
-            max-width: 100% !important;
-            overflow-wrap: anywhere !important
-        }
 
-        .slide.result-slide .result-school,
-        .slide.excel-result .result-school {
-            font-size: clamp(29px, 2.15vw, 42px) !important;
-            line-height: 1.08 !important;
-            font-weight: 850 !important;
-            margin: 3px 0 13px !important;
-            max-width: 100% !important;
-            overflow-wrap: anywhere !important
-        }
+
 
         .slide.result-slide .result-main-score,
         .slide.excel-result .result-main-score {
@@ -5791,16 +5773,8 @@
                 gap: 22px !important
             }
 
-            .slide.result-slide .result-name,
-            .slide.excel-result .result-name {
-                font-size: clamp(46px, 4.2vw, 72px) !important
-            }
 
-            .slide.result-slide .result-school,
-            .slide.excel-result .result-school {
-                font-size: clamp(27px, 2vw, 36px) !important;
-                margin-bottom: 10px !important
-            }
+
 
             .slide.result-slide .result-main-score>strong,
             .slide.excel-result .result-main-score>strong {
@@ -5826,10 +5800,7 @@
                 gap: 18px !important
             }
 
-            .slide.result-slide .result-school,
-            .slide.excel-result .result-school {
-                font-size: clamp(24px, 1.8vw, 32px) !important
-            }
+
 
             .slide.result-slide .result-subject,
             .slide.excel-result .result-subject {
@@ -6322,9 +6293,14 @@
                 font-size: 12px !important
             }
 
-            .tv-fixed-slide .footer-contact {
-                font-size: 18px !important
-            }
+            .tv-fixed-slide .footer-contact{
+    text-align:right;
+    font-size:42px !important;
+    font-weight:800 !important;
+    color:#fde047 !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+}
 
             .tv-fixed-slide .tv-controls {
                 bottom: 88px !important
@@ -7220,6 +7196,23 @@
             }
         }
     </style>
+
+<style id="unified-footer-final">
+.footer-contact{
+ text-align:right !important;
+ font-size:42px !important;
+ font-weight:800 !important;
+ color:#fde047 !important;
+ line-height:1.05 !important;
+ white-space:nowrap !important;
+}
+.footer-contact span{
+ font-size:16px !important;
+ color:#94a3b8 !important;
+ font-weight:600 !important;
+}
+</style>
+
 </head>
 
 <body>
