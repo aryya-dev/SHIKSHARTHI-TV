@@ -9341,6 +9341,15 @@
                 let isPlaying = true;
                 let progressTimer = null;
 
+                // Watchdog State
+                let lastTransitionTime = Date.now();
+                let expectedDuration = 7000;
+                let watchdogTimer = null;
+                let stallCount = 0;
+                let lastRepairedTime = 0;
+                const WATCHDOG_CHECK_INTERVAL = 2000; // Check every 2 seconds
+                const STALL_GRACE_PERIOD = 3000; // 3 seconds buffer beyond expected slide duration
+
                 function refreshSlides() {
                     slides = Array.from(document.querySelectorAll(".slide-container > .slide"));
                 }
@@ -9360,8 +9369,18 @@
                     if (progressTimer) clearTimeout(progressTimer);
                     const bar = document.getElementById("progressBar");
                     if (bar) bar.style.width = "0%";
-                    if (!isPlaying || !slides.length) return;
-                    const duration = parseInt(slides[currentSlide].getAttribute("data-duration"), 10) || 7000;
+
+                    lastTransitionTime = Date.now();
+
+                    if (!isPlaying || !slides.length) {
+                        expectedDuration = 7000;
+                        return;
+                    }
+
+                    const slideDurationAttr = slides[currentSlide] ? slides[currentSlide].getAttribute("data-duration") : null;
+                    const duration = parseInt(slideDurationAttr, 10) || 7000;
+                    expectedDuration = duration;
+
                     if (bar) {
                         bar.style.transition = "none";
                         bar.style.width = "0%";
@@ -9370,7 +9389,10 @@
                             bar.style.width = "100%";
                         }));
                     }
-                    progressTimer = setTimeout(nextSlide, duration);
+
+                    progressTimer = setTimeout(() => {
+                        nextSlide();
+                    }, duration);
                 }
 
                 function togglePlay() {
@@ -9379,6 +9401,69 @@
                     if (btn) btn.textContent = isPlaying ? "PAUSE" : "PLAY";
                     resetProgress();
                 }
+
+                // Automatic Slideshow Watchdog Core Check
+                function checkWatchdog() {
+                    try {
+                        const domSlides = document.querySelectorAll(".slide-container > .slide");
+                        if (domSlides.length !== slides.length) {
+                            refreshSlides();
+                        }
+                        if (!slides.length) return;
+
+                        // Integrity Check: Ensure active slide is correctly set
+                        const activeSlides = document.querySelectorAll(".slide-container > .slide.active");
+                        if (activeSlides.length !== 1 || !slides[currentSlide] || !slides[currentSlide].classList.contains("active")) {
+                            console.warn("[Slideshow Watchdog] Active slide state mismatch detected. Self-healing active slide state...");
+                            slides.forEach((slide, i) => slide.classList.toggle("active", i === currentSlide));
+                            lastRepairedTime = Date.now();
+                        }
+
+                        // Stall Detection (only when playing)
+                        if (isPlaying) {
+                            const elapsed = Date.now() - lastTransitionTime;
+                            const maxAllowedDuration = expectedDuration + STALL_GRACE_PERIOD;
+
+                            if (elapsed > maxAllowedDuration) {
+                                stallCount++;
+                                console.warn(`[Slideshow Watchdog] Slide stall detected! (Elapsed: ${elapsed}ms, Expected Max: ${maxAllowedDuration}ms). Auto-recovering next slide...`);
+                                nextSlide();
+                            }
+                        }
+                    } catch (err) {
+                        console.error("[Slideshow Watchdog] Error inside watchdog check:", err);
+                        try {
+                            resetProgress();
+                        } catch (e) { /* ignore */ }
+                    }
+                }
+
+                function startWatchdog() {
+                    if (watchdogTimer) clearInterval(watchdogTimer);
+                    watchdogTimer = setInterval(checkWatchdog, WATCHDOG_CHECK_INTERVAL);
+                }
+
+                // Resync function for Amazon Silk / Fire TV sleep wakeup, tab focus, and ambient screen restoration
+                function handleWakeup(reason) {
+                    console.log("[Slideshow Watchdog] Wakeup trigger (" + reason + "). Verifying slide timing state...");
+                    if (!slides.length) refreshSlides();
+                    checkWatchdog();
+                    if (isPlaying) {
+                        const elapsed = Date.now() - lastTransitionTime;
+                        if (elapsed >= expectedDuration) {
+                            nextSlide();
+                        } else {
+                            resetProgress();
+                        }
+                    }
+                }
+
+                // Handle Page Visibility & Silk Browser Focus / Page Show State Changes
+                document.addEventListener("visibilitychange", function () {
+                    if (document.visibilityState === "visible") handleWakeup("visibilitychange");
+                });
+                window.addEventListener("focus", function () { handleWakeup("focus"); });
+                window.addEventListener("pageshow", function () { handleWakeup("pageshow"); });
 
                 document.addEventListener("DOMContentLoaded", function () {
                     refreshSlides();
@@ -9397,12 +9482,36 @@
                     });
 
                     resetProgress();
+                    startWatchdog();
+                    console.log("[Slideshow Watchdog] Automatic Slideshow Watchdog active & operational.");
                 });
 
+                // Expose global methods & watchdog status API
                 window.nextSlide = nextSlide;
                 window.prevSlide = prevSlide;
                 window.togglePlay = togglePlay;
                 window.showSlide = showSlide;
+                window.slideshowWatchdog = {
+                    getStatus: function () {
+                        return {
+                            isPlaying: isPlaying,
+                            currentSlide: currentSlide,
+                            totalSlides: slides.length,
+                            elapsedMs: Date.now() - lastTransitionTime,
+                            expectedDurationMs: expectedDuration,
+                            stallCount: stallCount,
+                            lastTransition: new Date(lastTransitionTime).toISOString(),
+                            lastRepaired: lastRepairedTime ? new Date(lastRepairedTime).toISOString() : null,
+                            watchdogActive: !!watchdogTimer
+                        };
+                    },
+                    forceCheck: checkWatchdog,
+                    restart: function () {
+                        refreshSlides();
+                        showSlide(0);
+                        startWatchdog();
+                    }
+                };
             })();
         </script>
 </body>
